@@ -6,7 +6,7 @@ class Player:
         self.name: str = name
         self.hp: int = hp
         self.level = 1
-        self.inventory = {"coins": 10}
+        self.inventory = {"coins": 9}
 
     def change_hp(self, change):
         self.hp = self.hp + change

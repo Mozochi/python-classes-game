@@ -14,11 +14,12 @@ if __name__ == '__main__':
     
     """newGrid: Grid = Grid()
     newGrid.add_to_grid(2, 2, player.name)
+    newGrid.add_to_grid(1,1, Creature.name)
     newGrid.print_grid()
     print("\n")
     print("\n")
     print("\n")
-    newGrid.move_up(player)
+    newGrid.move_up(player.name)
     newGrid.print_grid()"""
 
     """shop1: Shop = Shop(player.inventory.get("coins"))
