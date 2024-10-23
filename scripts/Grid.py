@@ -1,3 +1,8 @@
+from scripts.NPC import NPC
+
+
+
+
 class Grid:
     def __init__(self):
         self.grid = []
@@ -43,3 +48,16 @@ class Grid:
         if item in self.gridDict:
             x, y = self.gridDict[item]
             self.move_item(x + 1, y, item)
+    
+    def generate_grid(self, playerLevel) -> list:
+        self.generate_empty_grid(7, 10)
+        NPC_list = []
+
+        Creature: NPC = NPC("Creature", 10, False, playerLevel)
+        NPC_list.append(Creature)
+
+        self.add_to_grid(3, 3, Creature.name)
+
+        return NPC_list
+        
+
