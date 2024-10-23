@@ -1,6 +1,10 @@
 class Grid:
     def __init__(self):
-        self.grid = [[0 for x in range(5)] for y in range(5)]
+        self.grid = []
+        self.gridDict = {}
+
+    def generate_empty_grid(self, size_x, size_y):
+        self.grid = [[0 for x in range(size_x)] for y in range(size_y)]
         self.gridDict = {}
 
     def add_to_grid(self, x, y, item):
