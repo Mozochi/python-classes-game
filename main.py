@@ -4,6 +4,7 @@ from scripts.Shop import Shop
 from scripts.Grid import Grid
 
 NPC_array = {}
+NPC_locations = {}
 
 def main():
 
@@ -11,10 +12,13 @@ def main():
 
     gameGrid: Grid = Grid()
 
-    NPC_List = gameGrid.generate_grid(player.level)
+    NPC_List, NPC_Locations = gameGrid.generate_grid(player.level)
     for NPC in NPC_List:
         NPC_array[NPC.name] = NPC
-        print(NPC.name)
+
+    gameGrid.print_grid()
+
+
     
 
     #gameGrid.generate_empty_grid(7, 10)

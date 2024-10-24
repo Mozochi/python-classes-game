@@ -1,5 +1,5 @@
 class Shop:
-    def __init__(self, playerGold):
+    def __init__(self, playerGold, shopInventory):
         self.playerCoins = playerGold
         self.itemsForSale = {}  # item:cost
 

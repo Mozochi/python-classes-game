@@ -49,15 +49,24 @@ class Grid:
             x, y = self.gridDict[item]
             self.move_item(x + 1, y, item)
     
-    def generate_grid(self, playerLevel) -> list:
+    def generate_grid(self, playerLevel):
+
         self.generate_empty_grid(7, 10)
         NPC_list = []
+        NPC_location = {} #NPC Name : (x,y)
 
-        Creature: NPC = NPC("Creature", 10, False, playerLevel)
+        Creature: NPC = NPC("Creature", False, playerLevel)
         NPC_list.append(Creature)
+        NPC_location[Creature.name] = (3, 3)
 
-        self.add_to_grid(3, 3, Creature.name)
-
-        return NPC_list
+        Shop: NPC = NPC("Shopkeeper", False, playerLevel)
+        NPC_list.append(Shop)  
+        NPC_location[Shop.name] = (3, 4)
         
 
+        self.add_to_grid(3, 3, Creature.name)
+        self.add_to_grid(3, 4, Shop.name)
+        
+
+        return NPC_list, NPC_location
+        
